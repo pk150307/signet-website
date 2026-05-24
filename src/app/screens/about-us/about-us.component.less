@@ -3,70 +3,270 @@
 @import '../../../assets/styles/mixins.less';
 
 
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+
+  &.btn-primary {
+    background: #3b82f6;
+    color: #fff;
+  }
+
+  &.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+
+    &:hover {
+      background: #fff;
+      color: #0a1628;
+    }
+  }
+}
+
 .about-us {
-  section {
+  &__section {
     position: relative;
   }
 
-  &__page-header {
-    .section-horizontal-padding();
-    background: linear-gradient(135deg, #0a1628 0%, #1a2d4a 100%);
+  &__section--dark {
+    background: linear-gradient(135deg, #0a1628 0%, #122240 55%, #1a2d4a 100%);
     color: #fff;
-    padding-top: 80px;
-    padding-bottom: 64px;
-    text-align: center;
+
+    .about-us__section-eyebrow {
+      color: #93c5fd;
+    }
   }
 
-  &__eyebrow {
+  &__section--light {
+    background: #ffffff;
+    color: #0a1628;
+
+    .about-us__section-eyebrow {
+      color: #3b82f6;
+    }
+
+    .btn-secondary {
+      color: #0a1628;
+      border-color: #0a1628;
+
+      &:hover {
+        background: #0a1628;
+        color: #fff;
+      }
+    }
+  }
+
+  &__hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 160px 140px 100px;
+    min-height: 75vh;
+  }
+
+  &__hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  &__hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+  }
+
+  &__hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(10, 22, 40, 0.55) 0%, rgba(10, 22, 40, 0.82) 55%, rgba(10, 22, 40, 0.92) 100%),
+      linear-gradient(135deg, rgba(10, 22, 40, 0.72) 0%, rgba(26, 45, 74, 0.55) 100%);
+    z-index: 1;
+  }
+
+  &__hero-layout {
+    max-width: 1160px;
+    margin: auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  &__section-eyebrow {
     font-size: 14px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #93c5fd;
-    margin-bottom: 12px;
+    color: #3b82f6;
+    margin-bottom: 16px;
+    font-weight: 600;
+    text-align: center;
+
+    &--dark {
+      color: #93c5fd;
+    }
+
+    &--left {
+      text-align: left;
+    }
+    
+    &--hero {
+      text-align: center;
+    }
   }
 
-  &__page-title {
+  &__hero-title {
     font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 48px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  &__hero-description {
+    font-size: 19px;
+    color: #ccc;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    max-width: 800px;
+  }
+
+  &__hero-tagline {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #3b82f6;
+    margin-bottom: 32px;
     font-weight: 600;
   }
 
-  &__content {
-    .section-horizontal-padding();
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-
   &__intro {
-    max-width: 900px;
-    margin: 0 auto 48px;
+    padding: 80px 140px;
   }
 
-  &__text-description {
+  &__intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__intro-copy {
+    text-align: left;
+  }
+
+  &__intro-visual {
+    position: relative;
+  }
+
+  &__intro-image {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  &__intro-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #0a1628;
+    line-height: 1.2;
+    margin-bottom: 24px;
+
+    &--left {
+      text-align: left;
+    }
+  }
+
+  &__intro-lead {
     font-size: 18px;
     line-height: 1.8;
-    color: #333;
-    margin-bottom: 16px;
+    color: #444;
+    margin-bottom: 24px;
+
+    &--left {
+      text-align: left;
+    }
+  }
+
+  &__intro-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 0;
+
+    &--left {
+      text-align: left;
+    }
   }
 
   &__vision-mission {
+    padding: 80px 140px;
+  }
+
+  &__vision-mission-layout {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__vision-mission-header {
+    text-align: center;
+    margin: 0 auto 48px;
+  }
+
+  &__vision-mission-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+
+  &__vision-mission-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
-    margin-bottom: 48px;
   }
 
   &__vm-card {
-    padding: 32px;
-    background: linear-gradient(135deg, #0a1628 0%, #1a2d4a 100%);
-    color: #fff;
-    border-radius: 8px;
+    padding: 40px 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 
-  &__vm-title {
+  &__vm-card-title {
     font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #93c5fd;
@@ -74,63 +274,273 @@
     font-weight: 600;
   }
 
-  &__vm-text {
-    font-size: 21px;
+  &__vm-card-text {
+    font-size: 20px;
     line-height: 1.6;
     font-weight: 500;
+    color: #fff;
+    margin: 0;
   }
 
   &__features {
+    padding: 80px 140px;
+  }
+
+  &__features-layout {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__features-header {
+    text-align: center;
+    margin: 0 auto 48px;
+  }
+
+  &__features-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #0a1628;
+  }
+
+  &__features-lead {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+    max-width: 680px;
+    margin: auto;
+  }
+
+  &__features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
 
-  &__feature {
-    padding: 32px;
-    background: #f5f5f5;
-    border-radius: 8px;
-    border-left: 4px solid #3b82f6;
+  &__feature-card {
+    padding: 0;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(10, 22, 40, 0.06);
   }
 
-  &__feature-title {
+  &__feature-card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__feature-card-title {
     font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 12px;
     color: #0a1628;
-    font-weight: 600;
+    padding: 24px 24px 0;
   }
 
-  &__feature-description {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
+  &__feature-card-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
     margin: 0;
+    padding: 0 24px 24px;
+  }
+
+  &__cta-band {
+    padding: 80px 140px;
+    text-align: center;
+  }
+
+  &__cta-band-layout {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__cta-band-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  &__cta-band-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    max-width: 680px;
+    margin: 0 auto 36px;
+  }
+
+  &__cta-band-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__cta-band-btn {
+    min-width: 200px;
   }
 }
 
 @media @tablet {
-  .about-us__page-title {
+  .about-us__hero {
+    padding: 120px 50px 80px;
+  }
+
+  .about-us__hero-title {
+    font-size: 36px;
+  }
+
+  .about-us__hero-description {
+    font-size: 18px;
+  }
+
+  .about-us__intro,
+  .about-us__vision-mission,
+  .about-us__features,
+  .about-us__cta-band {
+    padding: 50px 50px;
+  }
+
+  .about-us__intro-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-us__intro-visual {
+    order: 2;
+  }
+
+  .about-us__intro-copy {
+    order: 1;
+  }
+
+  .about-us__intro-title,
+  .about-us__features-title,
+  .about-us__vision-mission-title,
+  .about-us__cta-band-title {
     font-size: 32px;
   }
 
-  .about-us__vision-mission {
+  .about-us__vision-mission-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-us__features {
-    grid-template-columns: 1fr;
+  .about-us__features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-us__section-eyebrow {
+    text-align: left;
+
+    &--hero {
+      text-align: center;
+    }
+  }
+
+  .about-us__features-header {
+    text-align: left;
+  }
+
+  .about-us__vision-mission-header {
+    text-align: left;
+  }
+
+  .about-us__features-lead {
+    max-width: 100%;
   }
 }
 
 @media @mobile {
-  .about-us__page-title {
-    font-size: 29px;
+  .about-us__hero {
+    padding: 150px 20px 80px;
   }
 
-  .about-us__vm-text {
+  .about-us__hero-title {
+    font-size: 28px;
+  }
+
+  .about-us__hero-description {
+    font-size: 16px;
+  }
+
+  .about-us__intro,
+  .about-us__vision-mission,
+  .about-us__features,
+  .about-us__cta-band {
+    padding: 40px 20px;
+  }
+
+  .about-us__intro-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-us__intro-visual {
+    order: 2;
+  }
+
+  .about-us__intro-copy {
+    order: 1;
+  }
+
+  .about-us__intro-title,
+  .about-us__features-title,
+  .about-us__vision-mission-title,
+  .about-us__cta-band-title {
+    font-size: 26px;
+  }
+
+  .about-us__intro-lead,
+  .about-us__features-lead,
+  .about-us__cta-band-text {
+    font-size: 16px;
+  }
+
+  .about-us__vision-mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-us__features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-us__vm-card-text {
     font-size: 18px;
+  }
+
+  .about-us__cta-band-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-us__cta-band-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .about-us__section-eyebrow {
+    text-align: left;
+
+    &--hero {
+      text-align: center;
+    }
+  }
+
+  .about-us__features-header {
+    text-align: left;
+  }
+
+  .about-us__vision-mission-header {
+    text-align: left;
   }
 }
