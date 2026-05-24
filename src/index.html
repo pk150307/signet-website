@@ -1,35 +1,82 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Signet Corporate Services - Security & Manpower Solutions in Delhi NCR</title>
+  <meta charset="UTF-8">
+  <!-- Required for SPA routing: otherwise nested routes resolve assets relative to the route -->
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Signet Corporate Services provides professional security guards, industrial manpower, and workforce solutions across Delhi NCR, Gurgaon, Manesar, and Udyog Vihar. Trusted by 50+ client organisations.">
-  <meta name="keywords" content="security services Delhi NCR, industrial manpower Gurgaon, security guards Manesar, workforce solutions, factory security, corporate security, warehouse security, housekeeping services, Signet Corporate Services">
-  <meta name="author" content="Signet Corporate Services">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Signet Corporate Services - Security & Manpower Solutions in Delhi NCR">
-  <meta property="og:description" content="Professional security guards, industrial manpower, and workforce solutions across Delhi NCR. Trusted by 50+ client organisations.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://signetcorporateservices.com/">
-  <meta property="og:image" content="https://signetcorporateservices.com/assets/images/guard-company-gate.jpg">
-  <meta property="og:site_name" content="Signet Corporate Services">
-  <meta property="og:locale" content="en_US">
+  <!-- Primary SEO defaults: route-level meta is set by the app's SeoService -->
+  <title>Signet Corporate Services — Security & Manpower Solutions | Delhi NCR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Signet Corporate Services - Security & Manpower Solutions in Delhi NCR">
-  <meta name="twitter:description" content="Professional security guards, industrial manpower, and workforce solutions across Delhi NCR. Trusted by 50+ client organisations.">
-  <meta name="twitter:image" content="https://signetcorporateservices.com/assets/images/guard-company-gate.jpg">
+  <!-- Critical paint shell (inline to avoid render-blocking CSS for first paint) -->
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+    }
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://signetcorporateservices.com/">
+    app-root {
+      display: block;
+      min-height: 100vh;
+    }
 
-  <!-- Structured Data (JSON-LD) -->
+    #fcp-shell {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    #fcp-shell .fcp-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+    }
+
+    body.app-bootstrapped #fcp-shell {
+      display: none;
+    }
+
+    .seo-support-content {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
+
+  <!-- Preload common fonts used by the app -->
+  <link rel="preload" href="assets/fonts/proxima-nova/ProximaNova-Regular.woff2" as="font" type="font/woff2"
+    crossorigin>
+  <link rel="preload" href="assets/fonts/proxima-nova/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta name="title" content="Signet Corporate Services — Security & Manpower Solutions | Delhi NCR" />
+  <meta name="description"
+    content="Signet Corporate Services delivers trained security guards and reliable industrial manpower across Delhi NCR (Gurgaon, Manesar, Udyog Vihar). Over a decade of disciplined operations, compliance, and on-ground accountability for factories, warehouses, and corporate campuses." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Signet Corporate Services — Security & Manpower Solutions" />
+  <meta property="og:description"
+    content="Professional security and manpower solutions across Delhi NCR. Trusted by industrial and corporate clients for disciplined, compliant services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://signetcorporateservices.com/" />
+  <meta property="og:image" content="https://signetcorporateservices.com/assets/images/guard-company-gate.jpg" />
+
+  <!-- Canonical and supporting links -->
+  <link rel="canonical" href="https://signetcorporateservices.com/" />
+  <link rel="sitemap" href="/assets/sitemap.xml" />
+  <link rel="robots" href="/robots.txt" />
+
+  <!-- Note: JSON-LD and route-specific SEO tags are injected client-side by the app's SeoService -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,7 +121,46 @@
   }
   </script>
 </head>
+
 <body>
+
+  <!-- SEO: Static copy for non-JS crawlers. Keep in sync with src/app content and routing. -->
+  <main class="seo-support-content" id="seo-static-shell">
+    <h1>Signet Corporate Services — Security & Manpower Solutions in Delhi NCR</h1>
+    <p>Signet Corporate Services provides trained security guards, industrial manpower, and workforce solutions to
+      factories, warehouses, and corporate campuses across Delhi NCR, including Gurgaon, Manesar, and Udyog Vihar. We
+      combine disciplined field operations, compliance, and accountable local teams to deliver reliable security and
+      staffing.</p>
+
+    <h2>Our core services</h2>
+    <p>Security guards, perimeter and gate checks, visitor management, industrial housekeeping, skilled/unskilled
+      manpower supply, and tailored operational staffing for industrial clients.</p>
+
+    <h2>Why clients choose Signet</h2>
+    <p>Local presence in Gurgaon, rapid mobilisation, structured training, and rigorous compliance with labour and
+      safety standards.</p>
+
+    <nav aria-label="Site map">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/solutions">Solutions</a></li>
+        <li><a href="/why-signet">Why Signet</a></li>
+        <li><a href="/clients">Our Clients</a></li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/assets/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </nav>
+
+    <p>For the full interactive experience, enable JavaScript in your browser.</p>
+  </main>
+
+  <div id="fcp-shell" aria-hidden="true">
+    <div class="fcp-header"></div>
+  </div>
   <app-root></app-root>
+
 </body>
+
 </html>
