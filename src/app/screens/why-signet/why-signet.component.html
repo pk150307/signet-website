@@ -2,51 +2,122 @@
   <app-header></app-header>
 
   <main>
-    <section class="why-signet__page-header">
-      <p class="why-signet__eyebrow">Why Signet Corporate Services</p>
-      <h1 class="why-signet__page-title">The Signet Advantage</h1>
-      <p class="why-signet__page-subtitle">
-        We do not just supply personnel — we deliver outcomes. Here is what sets Signet Corporate Services apart from
-        the rest.
-      </p>
-    </section>
 
-    <section class="why-signet__advantages">
-      <div class="why-signet__advantages-grid">
-        <div class="why-signet__advantage" *ngFor="let item of advantages">
-          <span class="why-signet__advantage-number">{{ item.number }}</span>
-          <h3 class="why-signet__advantage-title">{{ item.title }}</h3>
-          <p class="why-signet__advantage-description">{{ item.description }}</p>
+    <div class="why-signet__section">
+
+      <div class="why-signet__hero why-signet__section why-signet__section--dark">
+        <div class="why-signet__hero-media">
+          <img src="../../../assets/images/guard-company-gate.jpg" alt="Security guard at company gate" class="why-signet__hero-image">
+        </div>
+        <div class="why-signet__hero-overlay"></div>
+        <div class="why-signet__hero-layout">
+          <div class="why-signet__hero-inner">
+            <p class="why-signet__section-eyebrow why-signet__section-eyebrow--hero">Why Signet Corporate Services</p>
+            <h1 class="why-signet__hero-title">The Signet Advantage</h1>
+            <p class="why-signet__hero-description">
+              We do not just supply personnel — we deliver outcomes. Here is what sets Signet Corporate Services apart from
+              the rest.
+            </p>
+            <p class="why-signet__hero-tagline">Committed to Protect Your Asset</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="why-signet__industries">
-      <p class="why-signet__section-eyebrow">Industries We Serve</p>
-      <h2 class="why-signet__section-title">Built for Every Sector</h2>
-      <p class="why-signet__section-description">
-        Signet Corporate Services teams operate across a wide range of environments, adapting seamlessly to
-        sector-specific requirements.
-      </p>
-      <div class="why-signet__industries-grid">
-        <span class="why-signet__industry-tag" *ngFor="let industry of industries">{{ industry }}</span>
-      </div>
-    </section>
-
-    <section class="why-signet__compliance">
-      <p class="why-signet__section-eyebrow">Compliance &amp; Registration</p>
-      <h2 class="why-signet__section-title">Fully Registered. Fully Protected.</h2>
-      <p class="why-signet__section-description">
-        Engaging Signet Corporate Services means full statutory compliance on your behalf. All dues, contributions, and
-        filings are managed proactively — so you never need to worry.
-      </p>
-      <div class="why-signet__compliance-grid">
-        <div class="why-signet__compliance-card" *ngFor="let item of compliance">
-          <span class="why-signet__compliance-label">{{ item.label }}</span>
-          <span class="why-signet__compliance-value">{{ item.value }}</span>
+      <div class="why-signet__advantages why-signet__section why-signet__section--light">
+        <div class="why-signet__advantages-layout">
+          <div class="why-signet__advantages-header">
+            <p class="why-signet__section-eyebrow">What Sets Us Apart</p>
+            <h2 class="why-signet__advantages-title">Our Advantages</h2>
+            <p class="why-signet__advantages-lead">
+              Signet Corporate Services delivers professional security and reliable manpower with the consistency,
+              compliance, and accountability that industrial and corporate clients demand.
+            </p>
+          </div>
+          <div class="why-signet__advantages-grid">
+            <div class="why-signet__advantage">
+              <span class="why-signet__advantage-number">1</span>
+              <h3 class="why-signet__advantage-title">Full Statutory Compliance</h3>
+              <p class="why-signet__advantage-description">Registered under PF, ESI, and GST. All labour law obligations are met, protecting you from legal liability.</p>
+            </div>
+            <div class="why-signet__advantage">
+              <span class="why-signet__advantage-number">2</span>
+              <h3 class="why-signet__advantage-title">Trained & Verified Personnel</h3>
+              <p class="why-signet__advantage-description">Every deployment undergoes background verification and role-specific training before day one on site.</p>
+            </div>
+            <div class="why-signet__advantage">
+              <span class="why-signet__advantage-number">3</span>
+              <h3 class="why-signet__advantage-title">Operational Reliability</h3>
+              <p class="why-signet__advantage-description">Consistent attendance, disciplined conduct, and on-ground supervision ensure zero productivity gaps.</p>
+            </div>
+            <div class="why-signet__advantage">
+              <span class="why-signet__advantage-number">4</span>
+              <h3 class="why-signet__advantage-title">A Profit Centre, Not a Cost</h3>
+              <p class="why-signet__advantage-description">Theft prevention, productivity gains, and reduced attrition deliver measurable ROI for your organisation.</p>
+            </div>
+            <div class="why-signet__advantage">
+              <span class="why-signet__advantage-number">5</span>
+              <h3 class="why-signet__advantage-title">Responsive Client Support</h3>
+              <p class="why-signet__advantage-description">Dedicated relationship management. Requests addressed promptly — no bureaucratic delays.</p>
+            </div>
+            <div class="why-signet__advantage">
+              <span class="why-signet__advantage-number">6</span>
+              <h3 class="why-signet__advantage-title">Continuous Improvement</h3>
+              <p class="why-signet__advantage-description">Regular performance reviews, refresher training, and process upgrades keep standards industry-leading.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+
+      <div class="why-signet__industries why-signet__section why-signet__section--dark">
+        <div class="why-signet__industries-layout">
+          <div class="why-signet__industries-header">
+            <p class="why-signet__section-eyebrow why-signet__section-eyebrow--hero">Industries We Serve</p>
+            <h2 class="why-signet__industries-title">Built for Every Sector</h2>
+            <p class="why-signet__industries-lead">
+              Signet Corporate Services teams operate across a wide range of environments, adapting seamlessly to
+              sector-specific requirements.
+            </p>
+          </div>
+          <div class="why-signet__industries-grid">
+            <span class="why-signet__industry-tag" *ngFor="let industry of industries">{{ industry }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-signet__compliance why-signet__section why-signet__section--light">
+        <div class="why-signet__compliance-layout">
+          <div class="why-signet__compliance-header">
+            <p class="why-signet__section-eyebrow">Compliance &amp; Registration</p>
+            <h2 class="why-signet__compliance-title">Fully Registered. Fully Protected.</h2>
+            <p class="why-signet__compliance-lead">
+              Engaging Signet Corporate Services means full statutory compliance on your behalf. All dues, contributions, and
+              filings are managed proactively — so you never need to worry.
+            </p>
+          </div>
+          <div class="why-signet__compliance-grid">
+            <div class="why-signet__compliance-card" *ngFor="let item of compliance">
+              <span class="why-signet__compliance-label">{{ item.label }}</span>
+              <span class="why-signet__compliance-value">{{ item.value }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-signet__cta-band why-signet__section why-signet__section--dark">
+        <div class="why-signet__cta-band-layout">
+          <h2 class="why-signet__cta-band-title">Ready to experience the Signet advantage?</h2>
+          <p class="why-signet__cta-band-text">
+            Partner with a Gurgaon team that treats your premises like mission-critical infrastructure —
+            because for India's leading industrial and commercial establishments, it is.
+          </p>
+          <div class="why-signet__cta-band-actions">
+            <a routerLink="/contact" class="btn btn-primary why-signet__cta-band-btn">Get a Quote</a>
+            <a routerLink="/solutions" class="btn btn-secondary why-signet__cta-band-btn">View Services</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <app-footer></app-footer>
   </main>
