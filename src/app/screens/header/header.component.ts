@@ -3,7 +3,7 @@ import { Component, Renderer2, ElementRef } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.less'
+  styleUrls: ['./header.component.less']
 })
 export class HeaderComponent {
   isMenuOpen = false;

@@ -1,243 +1,221 @@
 <div class="home">
   <app-header></app-header>
 
-  <div class="home__section">
+  <main>
 
-    <div class="home__hero">
-      <div class="home__hero-slides" aria-hidden="true">
-        <div
-          class="home__hero-slide"
-          *ngFor="let slide of heroSlides; let i = index"
-          [class.home__hero-slide--active]="i === activeHeroSlide">
-          <img
-            *ngIf="slide.type === 'image'"
-            [src]="slide.src"
-            [alt]="slide.alt"
-            class="home__hero-slide-media">
-          <video
-            *ngIf="slide.type === 'video'"
-            class="home__hero-slide-media"
-            [src]="slide.src"
-            autoplay
-            muted
-            loop
-            playsinline>
-          </video>
-        </div>
-      </div>
-      <div class="home__hero-overlay"></div>
-      <div class="home__hero-inner">
-        <h1 class="home__hero-brand">Signet Corporate Services</h1>
-        <p class="home__hero-eyebrow">Security &amp; Manpower Solutions</p>
-        <p class="home__hero-badge">Corporate Profile — 2025</p>
-        <h2 class="home__hero-title">Protecting Assets.<br>Powering Workforces.</h2>
-        <p class="home__hero-description">
-          Signet Corporate Services delivers professional security and reliable manpower to India's leading industrial, commercial, and corporate establishments.
-        </p>
-        <p class="home__hero-tagline">Committed to Protect Your Asset</p>
-        <div class="home__hero-actions">
-          <a routerLink="/contact" class="btn btn-primary home__hero-btn">Get a Quote</a>
-          <a routerLink="/about" class="btn btn-secondary home__hero-btn">Learn More</a>
-        </div>
-      </div>
-      <div class="home__hero-dots">
-        <button
-          type="button"
-          *ngFor="let slide of heroSlides; let i = index"
-          class="home__hero-dot"
-          [class.home__hero-dot--active]="i === activeHeroSlide"
-          (click)="goToHeroSlide(i)"
-          [attr.aria-label]="'Go to hero slide ' + (i + 1)">
-        </button>
-      </div>
-    </div>
+    <div class="home__section">
 
-    <div class="home__stats home__section home__section--light" #statsSection>
-      <div class="home__stats-layout">
-        <div class="home__stats-intro">
-          <p class="home__stats-eyebrow">Our Track Record</p>
-          <h2 class="home__stats-heading">Built on discipline.<br>Measured in results.</h2>
-          <p class="home__stats-description">
-            Over a decade of on-ground operations across Delhi NCR — delivering security and manpower
-            with the consistency, compliance, and accountability that industrial and corporate clients demand.
+      <div class="home__hero">
+        <div class="home__hero-slides" aria-hidden="true">
+          <div class="home__hero-slide" *ngFor="let slide of heroSlides; let i = index"
+            [class.home__hero-slide--active]="i === activeHeroSlide">
+            <img *ngIf="slide.type === 'image'" [src]="slide.src" [alt]="slide.alt" class="home__hero-slide-media">
+            <video *ngIf="slide.type === 'video'" class="home__hero-slide-media" [src]="slide.src" autoplay muted loop
+              playsinline>
+            </video>
+          </div>
+        </div>
+        <div class="home__hero-overlay"></div>
+        <div class="home__hero-inner">
+          <div class="home__hero-brand">Signet Corporate Services</div>
+          <p class="home__hero-eyebrow">Security &amp; Manpower Solutions</p>
+          <p class="home__hero-badge">Corporate Profile — 2025</p>
+          <h1 class="home__hero-title">Protecting Assets.<br>Powering Workforces.</h1>
+          <p class="home__hero-description">
+            Signet Corporate Services delivers professional security and reliable manpower to India's leading
+            industrial, commercial, and corporate establishments.
           </p>
+          <p class="home__hero-tagline">Committed to Protect Your Asset</p>
+          <div class="home__hero-actions">
+            <a routerLink="/contact" class="btn btn-primary home__hero-btn">Get a Quote</a>
+            <a routerLink="/about" class="btn btn-secondary home__hero-btn">Learn More</a>
+          </div>
         </div>
-        <div class="home__stats-grid">
-          <article
-            class="home__stat"
-            *ngFor="let stat of kpiStats"
-            [class.home__stat--locked]="statsLocked">
-            <div class="home__stat-value-wrap">
-              <div class="home__stat-roll" [style.height.px]="statLineHeight">
-                <div
-                  class="home__stat-roll-track"
-                  [style.transform]="'translate3d(0,' + (-stat.rollIndex * statLineHeight) + 'px,0)'">
-                  <span
-                    class="home__stat-roll-item"
-                    *ngFor="let value of stat.strip"
-                    [style.height.px]="statLineHeight">
-                    {{ value }}
-                  </span>
-                </div>
-              </div>
-              <span class="home__stat-suffix" *ngIf="stat.suffix">{{ stat.suffix }}</span>
-            </div>
-            <span class="home__stat-label">{{ stat.label }}</span>
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="home__showcase home__section home__section--dark">
-      <div class="home__showcase-layout">
-        <div class="home__showcase-media">
-          <video
-            class="home__showcase-video"
-            controls
-            playsinline
-            preload="metadata"
-            [poster]="showcasePoster">
-            <source [src]="showcaseVideo" type="video/mp4">
-          </video>
-        </div>
-        <div class="home__showcase-content">
-          <p class="home__section-eyebrow">Security in Action</p>
-          <h2 class="home__showcase-title">Trained guards. Disciplined patrols. Visible presence.</h2>
-          <p class="home__showcase-text">
-            Watch how Signet security teams operate — gate checks, perimeter patrols, visitor screening, and
-            on-ground vigilance that keeps industrial and corporate premises protected across Delhi NCR.
-          </p>
-          <a routerLink="/solutions" class="home__showcase-link">View our service verticals →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="home__positioning home__section home__section--light">
-      <div class="home__positioning-layout">
-        <div class="home__positioning-copy">
-          <p class="home__section-eyebrow home__section-eyebrow--left">The Gurgaon Advantage</p>
-          <h2 class="home__positioning-title home__positioning-title--left">Big firms promise scale.<br>We deliver certainty.</h2>
-          <p class="home__positioning-lead home__positioning-lead--left">
-            India's security and manpower market is crowded with national operators built for volume — sprawling deployments,
-            layered subcontractors, and distant account desks. Signet Corporate Services was shaped for a different mandate:
-            focused, expert, and relentlessly accountable to industrial and corporate establishments across the NCR.
-          </p>
-          <ul class="home__positioning-list">
-            <li *ngFor="let point of competitorGaps">{{ point }}</li>
-          </ul>
-        </div>
-        <div class="home__positioning-visual">
-          <img [src]="positioningPrimaryImage" alt="Warehouse helpers and loaders at an NCR industrial unit" class="home__positioning-image">
-          <img [src]="positioningSecondaryImage" alt="Workers on a small-scale factory floor in Delhi NCR" class="home__positioning-image home__positioning-image--offset">
-        </div>
-      </div>
-    </div>
-
-    <div class="home__carousel home__section home__section--dark">
-      <div class="home__carousel-layout">
-        <div class="home__carousel-header">
-          <p class="home__section-eyebrow">Field Operations</p>
-          <h2 class="home__carousel-title">How Signet shows up on site</h2>
-          <p class="home__carousel-lead">
-            Gate security, vehicle checks, visitor registers, factory workers, helpers, and housekeeping —
-            the daily operations Signet manages across Gurgaon's industrial and commercial landscape.
-          </p>
-        </div>
-        <div class="home__carousel-frame">
-          <button type="button" class="home__carousel-control home__carousel-control--prev" (click)="prevSlide()" aria-label="Previous slide">
-            ‹
+        <div class="home__hero-dots">
+          <button type="button" *ngFor="let slide of heroSlides; let i = index" class="home__hero-dot"
+            [class.home__hero-dot--active]="i === activeHeroSlide" (click)="goToHeroSlide(i)"
+            [attr.aria-label]="'Go to hero slide ' + (i + 1)">
           </button>
-          <div class="home__carousel-track">
-            <article
-              class="home__carousel-slide"
-              *ngFor="let slide of carouselSlides; let i = index"
-              [class.home__carousel-slide--active]="i === activeSlide">
-              <img [src]="slide.image" [alt]="slide.title" class="home__carousel-image">
-              <div class="home__carousel-caption">
-                <h3 class="home__carousel-slide-title">{{ slide.title }}</h3>
-                <p class="home__carousel-slide-text">{{ slide.caption }}</p>
+        </div>
+      </div>
+
+      <div class="home__stats home__section home__section--light" #statsSection>
+        <div class="home__stats-layout">
+          <div class="home__stats-intro">
+            <p class="home__stats-eyebrow">Our Track Record</p>
+            <h2 class="home__stats-heading">Built on discipline.<br>Measured in results.</h2>
+            <p class="home__stats-description">
+              Over a decade of on-ground operations across Delhi NCR — delivering security and manpower
+              with the consistency, compliance, and accountability that industrial and corporate clients demand.
+            </p>
+          </div>
+          <div class="home__stats-grid">
+            <article class="home__stat" *ngFor="let stat of kpiStats" [class.home__stat--locked]="statsLocked">
+              <div class="home__stat-value-wrap">
+                <div class="home__stat-roll" [style.height.px]="statLineHeight">
+                  <div class="home__stat-roll-track"
+                    [style.transform]="'translate3d(0,' + (-stat.rollIndex * statLineHeight) + 'px,0)'">
+                    <span class="home__stat-roll-item" *ngFor="let value of stat.strip"
+                      [style.height.px]="statLineHeight">
+                      {{ value }}
+                    </span>
+                  </div>
+                </div>
+                <span class="home__stat-suffix" *ngIf="stat.suffix">{{ stat.suffix }}</span>
+              </div>
+              <span class="home__stat-label">{{ stat.label }}</span>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="home__showcase home__section home__section--dark">
+        <div class="home__showcase-layout">
+          <div class="home__showcase-media">
+            <video class="home__showcase-video" controls playsinline preload="metadata" [poster]="showcasePoster">
+              <source [src]="showcaseVideo" type="video/mp4">
+            </video>
+          </div>
+          <div class="home__showcase-content">
+            <p class="home__section-eyebrow">Security in Action</p>
+            <h2 class="home__showcase-title">Trained guards. Disciplined patrols. Visible presence.</h2>
+            <p class="home__showcase-text">
+              Watch how Signet security teams operate — gate checks, perimeter patrols, visitor screening, and
+              on-ground vigilance that keeps industrial and corporate premises protected across Delhi NCR.
+            </p>
+            <a routerLink="/solutions" class="home__showcase-link">View our service verticals →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="home__positioning home__section home__section--light">
+        <div class="home__positioning-layout">
+          <div class="home__positioning-copy">
+            <p class="home__section-eyebrow home__section-eyebrow--left">The Gurgaon Advantage</p>
+            <h2 class="home__positioning-title home__positioning-title--left">Big firms promise scale.<br>We deliver
+              certainty.</h2>
+            <p class="home__positioning-lead home__positioning-lead--left">
+              India's security and manpower market is crowded with national operators built for volume — sprawling
+              deployments,
+              layered subcontractors, and distant account desks. Signet Corporate Services was shaped for a different
+              mandate:
+              focused, expert, and relentlessly accountable to industrial and corporate establishments across the NCR.
+            </p>
+            <ul class="home__positioning-list">
+              <li *ngFor="let point of competitorGaps">{{ point }}</li>
+            </ul>
+          </div>
+          <div class="home__positioning-visual">
+            <img [src]="positioningPrimaryImage" alt="Warehouse helpers and loaders at an NCR industrial unit"
+              class="home__positioning-image">
+            <img [src]="positioningSecondaryImage" alt="Workers on a small-scale factory floor in Delhi NCR"
+              class="home__positioning-image home__positioning-image--offset">
+          </div>
+        </div>
+      </div>
+
+      <div class="home__carousel home__section home__section--dark">
+        <div class="home__carousel-layout">
+          <div class="home__carousel-header">
+            <p class="home__section-eyebrow">Field Operations</p>
+            <h2 class="home__carousel-title">How Signet shows up on site</h2>
+            <p class="home__carousel-lead">
+              Gate security, vehicle checks, visitor registers, factory workers, helpers, and housekeeping —
+              the daily operations Signet manages across Gurgaon's industrial and commercial landscape.
+            </p>
+          </div>
+          <div class="home__carousel-frame">
+            <button type="button" class="home__carousel-control home__carousel-control--prev" (click)="prevSlide()"
+              aria-label="Previous slide">
+              ‹
+            </button>
+            <div class="home__carousel-track">
+              <article class="home__carousel-slide" *ngFor="let slide of carouselSlides; let i = index"
+                [class.home__carousel-slide--active]="i === activeSlide">
+                <img [src]="slide.image" [alt]="slide.title" class="home__carousel-image">
+                <div class="home__carousel-caption">
+                  <h3 class="home__carousel-slide-title">{{ slide.title }}</h3>
+                  <p class="home__carousel-slide-text">{{ slide.caption }}</p>
+                </div>
+              </article>
+            </div>
+            <button type="button" class="home__carousel-control home__carousel-control--next" (click)="nextSlide()"
+              aria-label="Next slide">
+              ›
+            </button>
+          </div>
+          <div class="home__carousel-dots">
+            <button type="button" *ngFor="let slide of carouselSlides; let i = index" class="home__carousel-dot"
+              [class.home__carousel-dot--active]="i === activeSlide" (click)="goToSlide(i)"
+              [attr.aria-label]="'Go to slide ' + (i + 1)">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="home__edge home__section home__section--light">
+        <div class="home__edge-layout">
+          <div class="home__edge-header">
+            <p class="home__section-eyebrow">The Signet Difference</p>
+            <h2 class="home__edge-title">What sets us apart in a crowded market</h2>
+            <p class="home__edge-subtitle">
+              Where large competitors spread across facility management, cash logistics, and global portfolios,
+              we stay sharp — professional security and reliable manpower, delivered as one seamless operation.
+            </p>
+          </div>
+          <div class="home__edge-grid">
+            <article class="home__edge-card" *ngFor="let edge of edges">
+              <img [src]="edge.image" [alt]="edge.title" class="home__edge-card-image">
+              <h3 class="home__edge-card-title">{{ edge.title }}</h3>
+              <p class="home__edge-card-description">{{ edge.description }}</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="home__sector-grid home__section home__section--dark">
+        <div class="home__sector-grid-layout">
+          <div class="home__sector-grid-header">
+            <p class="home__section-eyebrow">Industries We Serve</p>
+            <h2 class="home__sector-grid-title">Security Solutions for Every Sector</h2>
+            <p class="home__sector-grid-lead">
+              Tailored security and manpower approaches for different environments and requirements —
+              the same Signet standard, adapted to how your industry actually operates.
+            </p>
+          </div>
+          <div class="home__sector-grid-cards">
+            <article class="home__sector-card" *ngFor="let sector of securitySectors; let i = index">
+              <div class="home__sector-card-media">
+                <img [src]="sector.image" [alt]="sector.title" class="home__sector-card-image">
+              </div>
+              <div class="home__sector-card-body">
+                <h3 class="home__sector-card-title">{{ sector.title }}</h3>
+                <p class="home__sector-card-text">{{ sector.description }}</p>
               </div>
             </article>
           </div>
-          <button type="button" class="home__carousel-control home__carousel-control--next" (click)="nextSlide()" aria-label="Next slide">
-            ›
-          </button>
-        </div>
-        <div class="home__carousel-dots">
-          <button
-            type="button"
-            *ngFor="let slide of carouselSlides; let i = index"
-            class="home__carousel-dot"
-            [class.home__carousel-dot--active]="i === activeSlide"
-            (click)="goToSlide(i)"
-            [attr.aria-label]="'Go to slide ' + (i + 1)">
-          </button>
+          <div class="home__sector-grid-footer">
+            <a routerLink="/solutions" class="home__sector-grid-link">Explore all eight service verticals →</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="home__edge home__section home__section--light">
-      <div class="home__edge-layout">
-        <div class="home__edge-header">
-          <p class="home__section-eyebrow">The Signet Difference</p>
-          <h2 class="home__edge-title">What sets us apart in a crowded market</h2>
-          <p class="home__edge-subtitle">
-            Where large competitors spread across facility management, cash logistics, and global portfolios,
-            we stay sharp — professional security and reliable manpower, delivered as one seamless operation.
+      <div class="home__cta-band home__section home__section--light">
+        <div class="home__cta-band-layout">
+          <h2 class="home__cta-band-title">Your operations don't pause.<br>Neither do we.</h2>
+          <p class="home__cta-band-text">
+            Partner with a Gurgaon team that treats your premises like mission-critical infrastructure —
+            because for India's leading industrial and commercial establishments, it is.
           </p>
-        </div>
-        <div class="home__edge-grid">
-          <article class="home__edge-card" *ngFor="let edge of edges">
-            <img [src]="edge.image" [alt]="edge.title" class="home__edge-card-image">
-            <h3 class="home__edge-card-title">{{ edge.title }}</h3>
-            <p class="home__edge-card-description">{{ edge.description }}</p>
-          </article>
+          <div class="home__cta-band-actions">
+            <a routerLink="/why-signet" class="btn btn-primary home__cta-band-btn">Why Signet</a>
+            <a routerLink="/contact" class="btn btn-secondary home__cta-band-btn">Request a Proposal</a>
+          </div>
         </div>
       </div>
+
     </div>
 
-    <div class="home__sector-grid home__section home__section--dark">
-      <div class="home__sector-grid-layout">
-        <div class="home__sector-grid-header">
-          <p class="home__section-eyebrow">Industries We Serve</p>
-          <h2 class="home__sector-grid-title">Security Solutions for Every Sector</h2>
-          <p class="home__sector-grid-lead">
-            Tailored security and manpower approaches for different environments and requirements —
-            the same Signet standard, adapted to how your industry actually operates.
-          </p>
-        </div>
-        <div class="home__sector-grid-cards">
-          <article class="home__sector-card" *ngFor="let sector of securitySectors; let i = index">
-            <div class="home__sector-card-media">
-              <img [src]="sector.image" [alt]="sector.title" class="home__sector-card-image">
-            </div>
-            <div class="home__sector-card-body">
-              <h3 class="home__sector-card-title">{{ sector.title }}</h3>
-              <p class="home__sector-card-text">{{ sector.description }}</p>
-            </div>
-          </article>
-        </div>
-        <div class="home__sector-grid-footer">
-          <a routerLink="/solutions" class="home__sector-grid-link">Explore all eight service verticals →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="home__cta-band home__section home__section--light">
-      <div class="home__cta-band-layout">
-        <h2 class="home__cta-band-title">Your operations don't pause.<br>Neither do we.</h2>
-        <p class="home__cta-band-text">
-          Partner with a Gurgaon team that treats your premises like mission-critical infrastructure —
-          because for India's leading industrial and commercial establishments, it is.
-        </p>
-        <div class="home__cta-band-actions">
-          <a routerLink="/why-signet" class="btn btn-primary home__cta-band-btn">Why Signet</a>
-          <a routerLink="/contact" class="btn btn-secondary home__cta-band-btn">Request a Proposal</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <app-footer></app-footer>
+    <app-footer></app-footer>
+  </main>
 </div>

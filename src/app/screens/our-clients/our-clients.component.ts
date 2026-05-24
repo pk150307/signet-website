@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 interface Client {
   name: string;
@@ -13,9 +14,24 @@ interface ClientGroup {
 @Component({
   selector: 'app-our-clients',
   templateUrl: './our-clients.component.html',
-  styleUrl: './our-clients.component.less'
+  styleUrls: ['./our-clients.component.less']
 })
-export class OurClientsComponent {
+export class OurClientsComponent implements OnInit {
+  constructor(private meta: Meta) {}
+
+  ngOnInit(): void {
+    this.setMetaTags();
+  }
+
+  private setMetaTags(): void {
+    this.meta.updateTag({ name: 'title', content: 'Our Clients - Signet Corporate Services' });
+    this.meta.updateTag({ name: 'description', content: 'Meet our valued clients across technology, manufacturing, pharma, apparel, and logistics sectors in Delhi NCR who trust Signet Corporate Services for their security and manpower needs.' });
+    this.meta.updateTag({ property: 'og:title', content: 'Our Clients - Signet Corporate Services' });
+    this.meta.updateTag({ property: 'og:description', content: 'Meet our valued clients across technology, manufacturing, pharma, apparel, and logistics sectors in Delhi NCR.' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://signetcorporateservices.com/clients' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Our Clients - Signet Corporate Services' });
+    this.meta.updateTag({ name: 'twitter:description', content: 'Meet our valued clients across technology, manufacturing, pharma, apparel, and logistics sectors in Delhi NCR.' });
+  }
   clientGroups: ClientGroup[] = [
     {
       title: 'Technology & Corporate',

@@ -1,48 +1,53 @@
 <div class="why-signet">
   <app-header></app-header>
 
-  <section class="why-signet__page-header">
-    <p class="why-signet__eyebrow">Why Signet Corporate Services</p>
-    <h1 class="why-signet__page-title">The Signet Advantage</h1>
-    <p class="why-signet__page-subtitle">
-      We do not just supply personnel — we deliver outcomes. Here is what sets Signet Corporate Services apart from the rest.
-    </p>
-  </section>
+  <main>
+    <section class="why-signet__page-header">
+      <p class="why-signet__eyebrow">Why Signet Corporate Services</p>
+      <h1 class="why-signet__page-title">The Signet Advantage</h1>
+      <p class="why-signet__page-subtitle">
+        We do not just supply personnel — we deliver outcomes. Here is what sets Signet Corporate Services apart from
+        the rest.
+      </p>
+    </section>
 
-  <section class="why-signet__advantages">
-    <div class="why-signet__advantages-grid">
-      <div class="why-signet__advantage" *ngFor="let item of advantages">
-        <span class="why-signet__advantage-number">{{ item.number }}</span>
-        <h3 class="why-signet__advantage-title">{{ item.title }}</h3>
-        <p class="why-signet__advantage-description">{{ item.description }}</p>
+    <section class="why-signet__advantages">
+      <div class="why-signet__advantages-grid">
+        <div class="why-signet__advantage" *ngFor="let item of advantages">
+          <span class="why-signet__advantage-number">{{ item.number }}</span>
+          <h3 class="why-signet__advantage-title">{{ item.title }}</h3>
+          <p class="why-signet__advantage-description">{{ item.description }}</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="why-signet__industries">
-    <p class="why-signet__section-eyebrow">Industries We Serve</p>
-    <h2 class="why-signet__section-title">Built for Every Sector</h2>
-    <p class="why-signet__section-description">
-      Signet Corporate Services teams operate across a wide range of environments, adapting seamlessly to sector-specific requirements.
-    </p>
-    <div class="why-signet__industries-grid">
-      <span class="why-signet__industry-tag" *ngFor="let industry of industries">{{ industry }}</span>
-    </div>
-  </section>
-
-  <section class="why-signet__compliance">
-    <p class="why-signet__section-eyebrow">Compliance &amp; Registration</p>
-    <h2 class="why-signet__section-title">Fully Registered. Fully Protected.</h2>
-    <p class="why-signet__section-description">
-      Engaging Signet Corporate Services means full statutory compliance on your behalf. All dues, contributions, and filings are managed proactively — so you never need to worry.
-    </p>
-    <div class="why-signet__compliance-grid">
-      <div class="why-signet__compliance-card" *ngFor="let item of compliance">
-        <span class="why-signet__compliance-label">{{ item.label }}</span>
-        <span class="why-signet__compliance-value">{{ item.value }}</span>
+    <section class="why-signet__industries">
+      <p class="why-signet__section-eyebrow">Industries We Serve</p>
+      <h2 class="why-signet__section-title">Built for Every Sector</h2>
+      <p class="why-signet__section-description">
+        Signet Corporate Services teams operate across a wide range of environments, adapting seamlessly to
+        sector-specific requirements.
+      </p>
+      <div class="why-signet__industries-grid">
+        <span class="why-signet__industry-tag" *ngFor="let industry of industries">{{ industry }}</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <app-footer></app-footer>
+    <section class="why-signet__compliance">
+      <p class="why-signet__section-eyebrow">Compliance &amp; Registration</p>
+      <h2 class="why-signet__section-title">Fully Registered. Fully Protected.</h2>
+      <p class="why-signet__section-description">
+        Engaging Signet Corporate Services means full statutory compliance on your behalf. All dues, contributions, and
+        filings are managed proactively — so you never need to worry.
+      </p>
+      <div class="why-signet__compliance-grid">
+        <div class="why-signet__compliance-card" *ngFor="let item of compliance">
+          <span class="why-signet__compliance-label">{{ item.label }}</span>
+          <span class="why-signet__compliance-value">{{ item.value }}</span>
+        </div>
+      </div>
+    </section>
+
+    <app-footer></app-footer>
+  </main>
 </div>

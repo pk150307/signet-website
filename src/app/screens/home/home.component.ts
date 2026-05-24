@@ -1,4 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 interface HomeEdge {
   title: string;
@@ -36,7 +37,7 @@ interface KpiStat {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.less'
+  styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('statsSection') statsSection?: ElementRef<HTMLElement>;
@@ -193,7 +194,19 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     'Signet was built for establishments that need certainty, not just headcount.'
   ];
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private meta: Meta) {
+    this.setMetaTags();
+  }
+
+  private setMetaTags(): void {
+    this.meta.updateTag({ name: 'title', content: 'Signet Corporate Services - Security & Manpower Solutions in Delhi NCR' });
+    this.meta.updateTag({ name: 'description', content: 'Signet Corporate Services provides professional security guards, industrial manpower, and workforce solutions across Delhi NCR, Gurgaon, Manesar, and Udyog Vihar. Trusted by 50+ client organisations.' });
+    this.meta.updateTag({ property: 'og:title', content: 'Signet Corporate Services - Security & Manpower Solutions in Delhi NCR' });
+    this.meta.updateTag({ property: 'og:description', content: 'Professional security guards, industrial manpower, and workforce solutions across Delhi NCR. Trusted by 50+ client organisations.' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://signetcorporateservices.com/' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Signet Corporate Services - Security & Manpower Solutions in Delhi NCR' });
+    this.meta.updateTag({ name: 'twitter:description', content: 'Professional security guards, industrial manpower, and workforce solutions across Delhi NCR. Trusted by 50+ client organisations.' });
+  }
 
   ngOnInit(): void {
     this.carouselTimer = setInterval(() => this.nextSlide(), 6000);

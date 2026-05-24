@@ -1,43 +1,46 @@
 <div class="our-clients">
   <app-header></app-header>
 
-  <section class="our-clients__page-header">
-    <p class="our-clients__eyebrow">Our Clients</p>
-    <h1 class="our-clients__page-title">Trusted by Leading Organisations</h1>
-    <p class="our-clients__page-subtitle">
-      Signet Corporate Services is proud to partner with a diverse portfolio of respected organisations across Gurgaon's industrial and commercial landscape.
-    </p>
-  </section>
-
-  <section class="our-clients__content">
-    <div class="our-clients__group" *ngFor="let group of clientGroups.slice(0, 3)">
-      <h2 class="our-clients__group-title">{{ group.title }}</h2>
-      <div class="our-clients__grid">
-        <div class="our-clients__card" *ngFor="let client of group.clients">
-          <h3 class="our-clients__card-name">{{ client.name }}</h3>
-          <p class="our-clients__card-location">{{ client.location }}</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="our-clients__continued">
+  <main>
+    <section class="our-clients__page-header">
       <p class="our-clients__eyebrow">Our Clients</p>
-      <h2 class="our-clients__continued-title">Client Portfolio Continued</h2>
-      <p class="our-clients__continued-subtitle">
-        Representative clients across apparel, export, logistics, trade and allied sectors.
+      <h1 class="our-clients__page-title">Trusted by Leading Organisations</h1>
+      <p class="our-clients__page-subtitle">
+        Signet Corporate Services is proud to partner with a diverse portfolio of respected organisations across
+        Gurgaon's industrial and commercial landscape.
       </p>
-    </div>
+    </section>
 
-    <div class="our-clients__group" *ngFor="let group of clientGroups.slice(3)">
-      <h2 class="our-clients__group-title">{{ group.title }}</h2>
-      <div class="our-clients__grid">
-        <div class="our-clients__card" *ngFor="let client of group.clients">
-          <h3 class="our-clients__card-name">{{ client.name }}</h3>
-          <p class="our-clients__card-location">{{ client.location }}</p>
+    <section class="our-clients__content">
+      <div class="our-clients__group" *ngFor="let group of clientGroups.slice(0, 3)">
+        <h2 class="our-clients__group-title">{{ group.title }}</h2>
+        <div class="our-clients__grid">
+          <div class="our-clients__card" *ngFor="let client of group.clients">
+            <h3 class="our-clients__card-name">{{ client.name }}</h3>
+            <p class="our-clients__card-location">{{ client.location }}</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <app-footer></app-footer>
+      <div class="our-clients__continued">
+        <p class="our-clients__eyebrow">Our Clients</p>
+        <h2 class="our-clients__continued-title">Client Portfolio Continued</h2>
+        <p class="our-clients__continued-subtitle">
+          Representative clients across apparel, export, logistics, trade and allied sectors.
+        </p>
+      </div>
+
+      <div class="our-clients__group" *ngFor="let group of clientGroups.slice(3)">
+        <h2 class="our-clients__group-title">{{ group.title }}</h2>
+        <div class="our-clients__grid">
+          <div class="our-clients__card" *ngFor="let client of group.clients">
+            <h3 class="our-clients__card-name">{{ client.name }}</h3>
+            <p class="our-clients__card-location">{{ client.location }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <app-footer></app-footer>
+  </main>
 </div>

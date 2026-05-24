@@ -1,11 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-why-signet',
   templateUrl: './why-signet.component.html',
-  styleUrl: './why-signet.component.less'
+  styleUrls: ['./why-signet.component.less']
 })
-export class WhySignetComponent {
+export class WhySignetComponent implements OnInit {
+  constructor(private meta: Meta) {}
+
+  ngOnInit(): void {
+    this.setMetaTags();
+  }
+
+  private setMetaTags(): void {
+    this.meta.updateTag({ name: 'title', content: 'Why Signet - Signet Corporate Services' });
+    this.meta.updateTag({ name: 'description', content: 'Discover why Signet Corporate Services is the preferred choice for security and manpower solutions in Delhi NCR - full compliance, trained personnel, and operational reliability.' });
+    this.meta.updateTag({ property: 'og:title', content: 'Why Signet - Signet Corporate Services' });
+    this.meta.updateTag({ property: 'og:description', content: 'Discover why Signet Corporate Services is the preferred choice for security and manpower solutions in Delhi NCR.' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://signetcorporateservices.com/why-signet' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Why Signet - Signet Corporate Services' });
+    this.meta.updateTag({ name: 'twitter:description', content: 'Discover why Signet Corporate Services is the preferred choice for security and manpower solutions in Delhi NCR.' });
+  }
   advantages = [
     {
       number: '1',
