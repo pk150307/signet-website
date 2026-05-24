@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "https://www.signetcorporateservices.com/:path*",
+      "destination": "https://signetcorporateservices.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "http://:path*",
+      "destination": "https://signetcorporateservices.com/:path*",
+      "permanent": true
+    }
+  ]
+}

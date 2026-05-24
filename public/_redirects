@@ -1,0 +1,7 @@
+# Force HTTPS and canonicalize to non-www
+https://www.signetcorporateservices.com/* https://signetcorporateservices.com/:splat 301!
+http://www.signetcorporateservices.com/* https://signetcorporateservices.com/:splat 301!
+http://signetcorporateservices.com/* https://signetcorporateservices.com/:splat 301!
+
+# SPA fallback (only if you need it)
+/*    /index.html   200
