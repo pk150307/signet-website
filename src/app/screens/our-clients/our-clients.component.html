@@ -2,44 +2,84 @@
   <app-header></app-header>
 
   <main>
-    <section class="our-clients__page-header">
-      <p class="our-clients__eyebrow">Our Clients</p>
-      <h1 class="our-clients__page-title">Trusted by Leading Organisations</h1>
-      <p class="our-clients__page-subtitle">
-        Signet Corporate Services is proud to partner with a diverse portfolio of respected organisations across
-        Gurgaon's industrial and commercial landscape.
-      </p>
-    </section>
 
-    <section class="our-clients__content">
-      <div class="our-clients__group" *ngFor="let group of clientGroups.slice(0, 3)">
-        <h2 class="our-clients__group-title">{{ group.title }}</h2>
-        <div class="our-clients__grid">
-          <div class="our-clients__card" *ngFor="let client of group.clients">
-            <h3 class="our-clients__card-name">{{ client.name }}</h3>
-            <p class="our-clients__card-location">{{ client.location }}</p>
+    <div class="our-clients__section">
+
+      <div class="our-clients__hero our-clients__section our-clients__section--dark">
+        <div class="our-clients__hero-media">
+          <img src="../../../assets/images/warehouse-helpers.jpg" alt="Warehouse workers" class="our-clients__hero-image">
+        </div>
+        <div class="our-clients__hero-overlay"></div>
+        <div class="our-clients__hero-layout">
+          <div class="our-clients__hero-inner">
+            <p class="our-clients__section-eyebrow our-clients__section-eyebrow--hero">Our Clients</p>
+            <h1 class="our-clients__hero-title">Trusted by Leading Organisations</h1>
+            <p class="our-clients__hero-description">
+              Signet Corporate Services is proud to partner with a diverse portfolio of respected organisations across
+              Gurgaon's industrial and commercial landscape.
+            </p>
+            <p class="our-clients__hero-tagline">Building Long-Term Partnerships</p>
           </div>
         </div>
       </div>
 
-      <div class="our-clients__continued">
-        <p class="our-clients__eyebrow">Our Clients</p>
-        <h2 class="our-clients__continued-title">Client Portfolio Continued</h2>
-        <p class="our-clients__continued-subtitle">
-          Representative clients across apparel, export, logistics, trade and allied sectors.
-        </p>
-      </div>
-
-      <div class="our-clients__group" *ngFor="let group of clientGroups.slice(3)">
-        <h2 class="our-clients__group-title">{{ group.title }}</h2>
-        <div class="our-clients__grid">
-          <div class="our-clients__card" *ngFor="let client of group.clients">
-            <h3 class="our-clients__card-name">{{ client.name }}</h3>
-            <p class="our-clients__card-location">{{ client.location }}</p>
+      <div class="our-clients__portfolio our-clients__section our-clients__section--light">
+        <div class="our-clients__portfolio-layout">
+          <div class="our-clients__portfolio-header">
+            <p class="our-clients__section-eyebrow">Client Portfolio</p>
+            <h2 class="our-clients__portfolio-title">Our Valued Partners</h2>
+            <p class="our-clients__portfolio-lead">
+              We serve clients across technology, manufacturing, pharma, apparel, logistics, and trade sectors in Delhi NCR.
+            </p>
+          </div>
+          <div class="our-clients__group" *ngFor="let group of clientGroups.slice(0, 3)">
+            <h3 class="our-clients__group-title">{{ group.title }}</h3>
+            <div class="our-clients__grid">
+              <div class="our-clients__card" *ngFor="let client of group.clients">
+                <h4 class="our-clients__card-name">{{ client.name }}</h4>
+                <p class="our-clients__card-location">{{ client.location }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+
+      <div class="our-clients__continued our-clients__section our-clients__section--dark">
+        <div class="our-clients__continued-layout">
+          <div class="our-clients__continued-header">
+            <p class="our-clients__section-eyebrow our-clients__section-eyebrow--hero">Our Clients</p>
+            <h2 class="our-clients__continued-title">Client Portfolio Continued</h2>
+            <p class="our-clients__continued-lead">
+              Representative clients across apparel, export, logistics, trade and allied sectors.
+            </p>
+          </div>
+          <div class="our-clients__group" *ngFor="let group of clientGroups.slice(3)">
+            <h3 class="our-clients__group-title">{{ group.title }}</h3>
+            <div class="our-clients__grid">
+              <div class="our-clients__card" *ngFor="let client of group.clients">
+                <h4 class="our-clients__card-name">{{ client.name }}</h4>
+                <p class="our-clients__card-location">{{ client.location }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="our-clients__cta-band our-clients__section our-clients__section--light">
+        <div class="our-clients__cta-band-layout">
+          <h2 class="our-clients__cta-band-title">Ready to join our client family?</h2>
+          <p class="our-clients__cta-band-text">
+            Partner with Signet Corporate Services and experience the security and manpower solutions that have earned
+            the trust of leading organisations across Delhi NCR.
+          </p>
+          <div class="our-clients__cta-band-actions">
+            <a routerLink="/contact" class="btn btn-primary our-clients__cta-band-btn">Get in Touch</a>
+            <a routerLink="/why-signet" class="btn btn-secondary our-clients__cta-band-btn">Why Choose Us</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <app-footer></app-footer>
   </main>
