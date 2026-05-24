@@ -10,86 +10,235 @@
   border-radius: 4px;
   font-size: 16px;
   font-weight: 600;
-  font-family: inherit;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+
+  &.btn-primary {
+    background: #3b82f6;
+    color: #fff;
+  }
 
   &.btn-secondary {
     background: transparent;
-    color: #0a1628;
-    border: 2px solid #0a1628;
-
-    &:hover {
-      background: #0a1628;
-      color: #fff;
-    }
+    color: #fff;
+    border: 2px solid #fff;
   }
 }
 
 .career {
-  section {
+  &__section {
     position: relative;
   }
 
-  &__page-header {
-    .section-horizontal-padding();
-    background: linear-gradient(135deg, #0a1628 0%, #1a2d4a 100%);
+  &__section--dark {
+    background: linear-gradient(135deg, #0a1628 0%, #122240 55%, #1a2d4a 100%);
     color: #fff;
-    padding-top: 64px;
-    padding-bottom: 64px;
-    text-align: center;
+
+    .career__section-eyebrow {
+      color: #93c5fd;
+    }
   }
 
-  &__page-title {
+  &__section--light {
+    background: #ffffff;
+    color: #0a1628;
+
+    .career__section-eyebrow {
+      color: #3b82f6;
+    }
+
+    .btn-secondary {
+      color: #0a1628;
+      border-color: #0a1628;
+    }
+  }
+
+  &__hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 160px 140px 100px;
+  }
+
+  &__hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  &__hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+  }
+
+  &__hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(10, 22, 40, 0.55) 0%, rgba(10, 22, 40, 0.82) 55%, rgba(10, 22, 40, 0.92) 100%),
+      linear-gradient(135deg, rgba(10, 22, 40, 0.72) 0%, rgba(26, 45, 74, 0.55) 100%);
+    z-index: 1;
+  }
+
+  &__hero-layout {
+    max-width: 1160px;
+    margin: auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  &__section-eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #3b82f6;
+    margin-bottom: 16px;
+    font-weight: 600;
+    text-align: center;
+
+    &--dark {
+      color: #93c5fd;
+    }
+
+    &--hero {
+      text-align: center;
+    }
+  }
+
+  &__hero-title {
     font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 48px;
-    margin-bottom: 8px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  &__hero-description {
+    font-size: 19px;
+    color: #ccc;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    max-width: 800px;
+  }
+
+  &__hero-tagline {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #3b82f6;
+    margin-bottom: 32px;
     font-weight: 600;
   }
 
-  &__page-subtitle {
-    font-size: 19px;
-    color: #ccc;
+  &__why-us {
+    padding: 80px 140px;
   }
 
-  &__content {
-    .section-horizontal-padding();
-    padding-top: 64px;
-    padding-bottom: 64px;
+  &__why-us-layout {
+    max-width: 1160px;
+    margin: auto;
   }
 
-  &__intro {
+  &__why-us-header {
     text-align: center;
-    max-width: 800px;
     margin: 0 auto 48px;
   }
 
-  &__intro-title {
+  &__why-us-title {
     font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 32px;
+    font-size: 40px;
+    font-weight: 700;
     margin-bottom: 16px;
+    color: #0a1628;
+  }
+
+  &__why-us-lead {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+  }
+
+  &__benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+
+  &__benefit {
+    background: #f5f5f5;
+    padding: 32px;
+    border-radius: 8px;
+    border-left: 3px solid #3b82f6;
+  }
+
+  &__benefit-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 20px;
+    margin-bottom: 12px;
     color: #0a1628;
     font-weight: 600;
   }
 
-  &__intro-description {
-    font-size: 18px;
+  &__benefit-description {
+    font-size: 16px;
     color: #333;
-    line-height: 1.8;
+    line-height: 1.6;
+  }
+
+  &__openings {
+    padding: 80px 140px;
+  }
+
+  &__openings-layout {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__openings-header {
+    text-align: center;
+    margin: 0 auto 48px;
   }
 
   &__openings-title {
     font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 32px;
-    margin-bottom: 32px;
-    color: #0a1628;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+
+  &__openings-lead {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin: 0;
   }
 
   &__job-list {
     display: grid;
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
   }
 
   &__job-card {
@@ -97,12 +246,6 @@
     padding: 32px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    }
   }
 
   &__job-card-title {
@@ -128,38 +271,143 @@
   &__job-card-btn {
     display: inline-block;
   }
+
+  &__cta-band {
+    padding: 80px 140px;
+    text-align: center;
+  }
+
+  &__cta-band-layout {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__cta-band-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #0a1628;
+  }
+
+  &__cta-band-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 680px;
+    margin: 0 auto 36px;
+  }
+
+  &__cta-band-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__cta-band-btn {
+    min-width: 200px;
+  }
 }
 
 @media @tablet {
-  .career__page-title {
+  .career__hero {
+    padding: 120px 50px 80px;
+  }
+
+  .career__hero-title {
+    font-size: 36px;
+  }
+
+  .career__hero-description {
+    font-size: 18px;
+  }
+
+  .career__why-us,
+  .career__openings,
+  .career__cta-band {
+    padding: 50px 50px;
+  }
+
+  .career__why-us-title,
+  .career__openings-title,
+  .career__cta-band-title {
     font-size: 32px;
   }
 
-  .career__intro-title,
-  .career__openings-title {
-    font-size: 24px;
+  .career__section-eyebrow {
+    text-align: left;
+  }
+
+  .career__why-us-header,
+  .career__openings-header {
+    text-align: left;
+  }
+
+  .career__why-us-lead,
+  .career__openings-lead {
+    max-width: 100%;
   }
 }
 
 @media @mobile {
-  .career__page-title {
-    font-size: 29px;
+  .career__hero {
+    padding: 150px 20px 80px;
   }
 
-  .career__page-subtitle {
+  .career__hero-title {
+    font-size: 28px;
+  }
+
+  .career__hero-description {
     font-size: 16px;
   }
 
-  .career__intro-title {
-    font-size: 24px;
+  .career__why-us,
+  .career__openings,
+  .career__cta-band {
+    padding: 40px 20px;
   }
 
-  .career__intro-description {
+  .career__benefits-grid,
+  .career__job-list {
+    grid-template-columns: 1fr;
+  }
+
+  .career__why-us-title,
+  .career__openings-title,
+  .career__cta-band-title {
+    font-size: 26px;
+  }
+
+  .career__why-us-lead,
+  .career__openings-lead,
+  .career__cta-band-text {
     font-size: 16px;
   }
 
-  .career__openings-title {
-    font-size: 24px;
+  .career__cta-band-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .career__cta-band-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .career__section-eyebrow {
+    text-align: left;
+
+    &--hero {
+      text-align: center;
+    }
+  }
+
+  .career__why-us-header,
+  .career__openings-header {
+    text-align: left;
   }
 
   .career__job-card {
