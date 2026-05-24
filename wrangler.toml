@@ -1,4 +1,1 @@
-name = "signet-website"
-compatibility_date = "2026-05-24"
-
 pages_build_output_dir = "./dist/signet-website/browser"
