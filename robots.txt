@@ -1,4 +1,40 @@
+# ==========================================
+# Signet Corporate Services - robots.txt
+# Last Updated: 2026-05-24
+# Keep in sync with src/app/app-routing.module.ts when routes change.
+# ==========================================
+
+# Content signal (informational): do not treat as a crawler directive
+# Content-Signal: ai-train=no, search=yes, ai-input=no
+
 User-agent: *
+# Whole site crawlable (Angular SPA + static assets)
 Allow: /
 
+# ---- Explicit Allow list = every Router path in the app (plus prefix rules) ----
+Allow: /about
+Allow: /solutions
+Allow: /why-signet
+Allow: /clients
+Allow: /contact
+Allow: /careers
+
+Allow: /assets/
+Allow: /assets/images/
+Allow: /assets/videos/
+
+# Sitemaps
 Sitemap: https://signetcorporateservices.com/sitemap.xml
+Sitemap: https://signetcorporateservices.com/assets/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ==========================================
+# Notes:
+# - `Allow: /` already permits all paths; the list above documents public routes.
+# - Test in Google Search Console after deploy.
+# ==========================================
