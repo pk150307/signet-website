@@ -3,65 +3,195 @@
 @import '../../../assets/styles/mixins.less';
 
 
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.btn-primary {
+    background: #3b82f6;
+    color: #fff;
+
+    &:hover {
+      background: #2563eb;
+    }
+  }
+
+  &.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+
+    &:hover {
+      background: #fff;
+      color: #0a1628;
+    }
+  }
+}
+
 .why-signet {
-  section {
+  &__section {
     position: relative;
   }
 
-  &__page-header {
-    .section-horizontal-padding();
-    background: linear-gradient(135deg, #0a1628 0%, #1a2d4a 100%);
+  &__section--dark {
+    background: linear-gradient(135deg, #0a1628 0%, #122240 55%, #1a2d4a 100%);
     color: #fff;
-    padding-top: 80px;
-    padding-bottom: 64px;
-    text-align: center;
+
+    .why-signet__section-eyebrow {
+      color: #93c5fd;
+    }
   }
 
-  &__eyebrow,
+  &__section--light {
+    background: #ffffff;
+    color: #0a1628;
+
+    .why-signet__section-eyebrow {
+      color: #3b82f6;
+    }
+
+    .btn-secondary {
+      color: #0a1628;
+      border-color: #0a1628;
+
+      &:hover {
+        background: #0a1628;
+        color: #fff;
+      }
+    }
+  }
+
+  &__hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 160px 140px 100px;
+  }
+
+  &__hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  &__hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+  }
+
+  &__hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(10, 22, 40, 0.55) 0%, rgba(10, 22, 40, 0.82) 55%, rgba(10, 22, 40, 0.92) 100%),
+      linear-gradient(135deg, rgba(10, 22, 40, 0.72) 0%, rgba(26, 45, 74, 0.55) 100%);
+    z-index: 1;
+  }
+
+  &__hero-layout {
+    max-width: 1160px;
+    margin: auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
   &__section-eyebrow {
     font-size: 14px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #93c5fd;
-    margin-bottom: 12px;
-  }
-
-  &__page-title,
-  &__section-title {
-    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 600;
-    color: #0a1628;
-  }
-
-  &__page-title {
-    font-size: 48px;
-    color: #fff;
+    color: #3b82f6;
     margin-bottom: 16px;
-  }
-
-  &__page-subtitle,
-  &__section-description {
-    font-size: 18px;
-    line-height: 1.7;
-    max-width: 780px;
-    margin: 0 auto;
-  }
-
-  &__page-subtitle {
-    color: #ccc;
-  }
-
-  &__section-description {
-    color: #333;
-    margin-bottom: 32px;
+    font-weight: 600;
     text-align: center;
+
+    &--dark {
+      color: #93c5fd;
+    }
+
+    &--hero {
+      text-align: center;
+    }
+  }
+
+  &__hero-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 48px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  &__hero-description {
+    font-size: 19px;
+    color: #ccc;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    max-width: 800px;
+  }
+
+  &__hero-tagline {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #3b82f6;
+    margin-bottom: 32px;
+    font-weight: 600;
   }
 
   &__advantages {
-    .section-horizontal-padding();
-    padding-top: 64px;
-    padding-bottom: 64px;
-    background: #fff;
+    padding: 80px 140px;
+  }
+
+  &__advantages-layout {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__advantages-header {
+    text-align: center;
+    margin: 0 auto 48px;
+  }
+
+  &__advantages-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #0a1628;
+  }
+
+  &__advantages-lead {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
   }
 
   &__advantages-grid {
@@ -106,16 +236,32 @@
   }
 
   &__industries {
-    .section-horizontal-padding();
-    padding-top: 64px;
-    padding-bottom: 64px;
-    background: #f5f5f5;
-    text-align: center;
+    padding: 80px 140px;
   }
 
-  &__section-title {
+  &__industries-layout {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__industries-header {
+    text-align: center;
+    margin: 0 auto 48px;
+  }
+
+  &__industries-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 40px;
+    font-weight: 700;
     margin-bottom: 16px;
+    color: #fff;
+  }
+
+  &__industries-lead {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin: 0;
   }
 
   &__industries-grid {
@@ -123,39 +269,76 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
+    max-width: 1160px;
+    margin: auto;
   }
 
   &__industry-tag {
-    background: #fff;
-    color: #0a1628;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
     padding: 12px 20px;
     border-radius: 4px;
     font-weight: 500;
-    border: 1px solid #e5e5e5;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 15px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(147, 197, 253, 0.5);
+    }
   }
 
   &__compliance {
-    .section-horizontal-padding();
-    padding-top: 64px;
-    padding-bottom: 64px;
-    background: #fff;
+    padding: 80px 140px;
+  }
+
+  &__compliance-layout {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__compliance-header {
     text-align: center;
+    margin: 0 auto 48px;
+  }
+
+  &__compliance-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #0a1628;
+  }
+
+  &__compliance-lead {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
   }
 
   &__compliance-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 1160px;
+    margin: auto;
   }
 
   &__compliance-card {
     padding: 32px 24px;
     background: linear-gradient(135deg, #0a1628 0%, #1a2d4a 100%);
     color: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
   }
 
   &__compliance-label {
@@ -173,28 +356,167 @@
     font-size: 18px;
     font-weight: 600;
   }
+
+  &__cta-band {
+    padding: 80px 140px;
+    text-align: center;
+  }
+
+  &__cta-band-layout {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__cta-band-title {
+    font-family: 'ProximaNova-Semibold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  &__cta-band-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    max-width: 680px;
+    margin: 0 auto 36px;
+  }
+
+  &__cta-band-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__cta-band-btn {
+    min-width: 200px;
+  }
 }
 
 @media @tablet {
-  .why-signet__page-title {
+  .why-signet__hero {
+    padding: 120px 50px 80px;
+  }
+
+  .why-signet__hero-title {
+    font-size: 36px;
+  }
+
+  .why-signet__hero-description {
+    font-size: 18px;
+  }
+
+  .why-signet__advantages,
+  .why-signet__industries,
+  .why-signet__compliance,
+  .why-signet__cta-band {
+    padding: 50px 50px;
+  }
+
+  .why-signet__advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-signet__compliance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-signet__advantages-title,
+  .why-signet__industries-title,
+  .why-signet__compliance-title,
+  .why-signet__cta-band-title {
     font-size: 32px;
   }
 
-  .why-signet__section-title {
-    font-size: 32px;
+  .why-signet__section-eyebrow {
+    text-align: left;
+
+    &--hero {
+      text-align: center;
+    }
+  }
+
+  .why-signet__industries-header {
+    text-align: center;
+  }
+
+  .why-signet__advantages-header,
+  .why-signet__compliance-header {
+    text-align: left;
+  }
+
+  .why-signet__advantages-lead,
+  .why-signet__industries-lead,
+  .why-signet__compliance-lead {
+    max-width: 100%;
   }
 }
 
 @media @mobile {
-  .why-signet__page-title {
-    font-size: 29px;
+  .why-signet__hero {
+    padding: 150px 20px 80px;
   }
 
-  .why-signet__section-title {
-    font-size: 26px;
+  .why-signet__hero-title {
+    font-size: 28px;
+  }
+
+  .why-signet__hero-description {
+    font-size: 16px;
+  }
+
+  .why-signet__advantages,
+  .why-signet__industries,
+  .why-signet__compliance,
+  .why-signet__cta-band {
+    padding: 40px 20px;
   }
 
   .why-signet__advantages-grid {
     grid-template-columns: 1fr;
+  }
+
+  .why-signet__compliance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-signet__advantages-title,
+  .why-signet__industries-title,
+  .why-signet__compliance-title,
+  .why-signet__cta-band-title {
+    font-size: 26px;
+  }
+
+  .why-signet__advantages-lead,
+  .why-signet__industries-lead,
+  .why-signet__compliance-lead,
+  .why-signet__cta-band-text {
+    font-size: 16px;
+  }
+
+  .why-signet__cta-band-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .why-signet__cta-band-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .why-signet__section-eyebrow {
+    text-align: left;
+
+    &--hero {
+      text-align: center;
+    }
+  }
+
+  .why-signet__advantages-header,
+  .why-signet__compliance-header {
+    text-align: left;
   }
 }
