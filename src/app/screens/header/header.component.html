@@ -2,19 +2,19 @@
 <header class="header" [class.menu-open]="isMenuOpen">
   <div class="header-content">
     <div class="logo">
-      <a routerLink="/" class="logo-text">SIGNET CORPORATE SERVICES</a>
+      <a routerLink="/" href="/" class="logo-text">SIGNET CORPORATE SERVICES</a>
     </div>
     <nav class="nav">
       <ul class="nav-list">
-        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-        <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About Us</a></li>
-        <li><a routerLink="/solutions" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Solutions</a></li>
-        <li><a routerLink="/why-signet" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Why Signet</a></li>
-        <li><a routerLink="/clients" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Our Clients</a></li>
-        <li><a routerLink="/careers" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Careers</a></li>
+  <li><a routerLink="/" href="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+  <li><a routerLink="/about" href="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About Us</a></li>
+  <li><a routerLink="/solutions" href="/solutions" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Solutions</a></li>
+  <li><a routerLink="/why-signet" href="/why-signet" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Why Signet</a></li>
+  <li><a routerLink="/clients" href="/clients" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Our Clients</a></li>
+  <li><a routerLink="/careers" href="/careers" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Careers</a></li>
       </ul>
     </nav>
-    <a routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="header-cta">Contact Us</a>
+  <a routerLink="/contact" href="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="header-cta">Contact Us</a>
     <button class="hamburger" (click)="toggleMenu()" aria-label="Open menu">
       <span></span>
       <span></span>
@@ -30,13 +30,13 @@
       </svg>
     </div>
     <ul class="mobile-nav-list">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a></li>
-      <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">About Us</a></li>
-      <li><a routerLink="/solutions" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Solutions</a></li>
-      <li><a routerLink="/why-signet" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Why Signet</a></li>
-      <li><a routerLink="/clients" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Our Clients</a></li>
-      <li><a routerLink="/careers" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Careers</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="btn-contact" (click)="closeMenu()">Contact Us</a></li>
+  <li><a routerLink="/" href="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a></li>
+  <li><a routerLink="/about" href="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">About Us</a></li>
+  <li><a routerLink="/solutions" href="/solutions" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Solutions</a></li>
+  <li><a routerLink="/why-signet" href="/why-signet" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Why Signet</a></li>
+  <li><a routerLink="/clients" href="/clients" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Our Clients</a></li>
+  <li><a routerLink="/careers" href="/careers" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Careers</a></li>
+  <li><a routerLink="/contact" href="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="btn-contact" (click)="closeMenu()">Contact Us</a></li>
     </ul>
   </div>
 </header>
